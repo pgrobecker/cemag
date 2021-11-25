@@ -23,6 +23,7 @@ def test():
     # If we were comparing one time point against 3 others, we would use [1,3]
     nc = [1,1]
 
+    # check documentation for entropy to see meaning of parameters
     H_result = entropy(all_data, groups, ncond=nc, k=10, N=1E3)
     p_result = inventropyfunc(H_result)
 
