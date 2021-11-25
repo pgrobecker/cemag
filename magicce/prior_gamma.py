@@ -71,7 +71,6 @@ def prior_params(data, a=0.5, b=0.1, tol=1e-6, maxiter=100):
                     break
 
             alpha = brentq(_alpha_optimum, alow, ahigh, args=(beta, ))
-            print('alpha', alpha)
 
             # find optimal beta for given alpha
             # find initial range in which to look for 0 in beta_optimum
@@ -87,7 +86,6 @@ def prior_params(data, a=0.5, b=0.1, tol=1e-6, maxiter=100):
                     break
 
             beta = brentq(_beta_optimum, blow, bhigh, args=(alpha, ))
-            print('beta', beta)
 
         return alpha, beta
 
@@ -112,9 +110,6 @@ def prior_params(data, a=0.5, b=0.1, tol=1e-6, maxiter=100):
                 raise RuntimeError('No conversion of prior parameters \
                                    for given maxiter')
     except:
-        print('# of loops', i)
-        print('alpha', a)
-        print('beta', b)
         raise
 
     # simple check that a,b give maximum in log-likelihood within given
