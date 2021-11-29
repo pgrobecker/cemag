@@ -93,7 +93,6 @@ def prior_params(data, a=0.5, b=0.1, tol=1e-6, maxiter=100):
     try:
         while True:
             i += 1
-            print(i)
             LL_old = _LL(a, b)
             a_old, b_old = a, b
             a, b = _update_params(a, b)
